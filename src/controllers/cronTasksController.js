@@ -12,7 +12,7 @@ rule.hour = 9;
 rule.minute = 30;
 
 
-var j = schedule.scheduleJob('15 * * * *', function(){
+var j = schedule.scheduleJob(rule, function(){
   employeeScm.find((err, employees) => {
     if (err) return console.error(err);
     employees.forEach((employee) => {

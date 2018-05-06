@@ -60,22 +60,6 @@ function event_callback(req, res){
 
     }else{
       apiService.sendMessage(`Wrong format: <1,2,3> - Text`, objEvent.channel);
-      res.send("Error"); // TODO remove this
     }
   }
-}
-function trashfunc(req, res){
-  employeeScm.find((err, employees) => {
-    if (err) return console.error(err);
-    employees.forEach((employee) => {
-      apiService.sendMessage(`
-        Hello ${ employee.user }
-      1- Yesterday, what did you get done?
-      2- Today, what will you get done?
-      2- How can the team help you?
-      To answer write: 1- <answer>...`, employee.slackId);
-    });
-  });
-
-  res.send('okie dokie');
 }
